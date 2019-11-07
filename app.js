@@ -25,7 +25,7 @@ function updateList() {
 
 function getListItem(homework) {
     return `
-        <a href="#" class="list-group-item list-group-item-action" onclick="editHomework()">
+        <a href="#" class="list-group-item list-group-item-action" onclick="editHomework()" value="${homeworkList.length}">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">${ homework.subject }</h5>
                 <small>${ homework.date }</small>
@@ -36,8 +36,8 @@ function getListItem(homework) {
 }
 
 function editHomework() {
-    console.log(this);
-    const index = this.value;
+    const index = event.target.value;
+    console.log(index);
     subjectInput.value = homeworkList[index].subject;
     taskInput.value = homeworkList[index].task;
     dateInput.value = homeworkList[index].date;
@@ -64,9 +64,9 @@ function deleteHomework() {
 
 class Homework {
 
-    constructor(subject, homework, date) {
+    constructor(subject, task, date) {
         this.subject = subject;
-        this.homework = homework;
+        this.task = task;
         this.date = date;
     }
 
