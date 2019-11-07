@@ -19,35 +19,37 @@
             <div class="col-md-6">
                 <!--Edit fiels-->
                 <div class="container-fluid" style="margin-top: 40px;">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="subject">Предмет</label>
-                                    <input type="text" class="form-control" id="subject" aria-describedby="emailHelp"
-                                        placeholder="Введите предмет">
-                                </div>
-                                <div class="form-group">
-                                    <label for="task">Задание</label>
-                                    <input type="text" class="form-control" id="task" placeholder="Задание">
-                                </div>
-                                <div class="form-group">
-                                    <label for="date">Дата</label>
-                                    <input type="date" class="form-control" id="date" placeholder="Дата">
-                                </div>
-                                <button class="btn btn-primary" onclick="addHomework()">Отправить</button>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="subject">Предмет</label>
+                                <input type="text" class="form-control" id="subject" aria-describedby="emailHelp"
+                                    placeholder="Введите предмет">
                             </div>
+                            <div class="form-group">
+                                <label for="task">Задание</label>
+                                <input type="text" class="form-control" id="task" placeholder="Задание">
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Дата</label>
+                                <input type="date" class="form-control" id="date">
+                            </div>
+                            <button class="btn btn-primary" onclick="addHomework()">Добавить</button>
+                            <button class="btn btn-success" onclick="updateHomework()" style="display: none;">Обновить</button>
+                            <button class="btn btn-danger" onclick="deleteHomework()" style="display: none;">Удалить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!--Ready fields-->
+                <div class="container-fluid" style="margin-top: 40px;">
+                    <div class="list-group" id="tasks">
+
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <!--Ready fields-->
-            <div class="container-fluid" style="margin-top: 40px;">
-                <div class="list-group" id="tasks">
-                    
-                </div>
-            </div>
-        </div>
-    </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
