@@ -3,6 +3,7 @@ const subjectInput = document.getElementById('subject');
 const taskInput = document.getElementById('task');
 const dateInput = document.getElementById('date');
 const tasksList = document.getElementById('tasks');
+const editControls = document.getElementById('edit-controls');
 //const 
 
 const homeworkList = [];
@@ -40,6 +41,13 @@ function editHomework(target) {
     subjectInput.value = homeworkList[index].subject;
     taskInput.value = homeworkList[index].task;
     dateInput.value = homeworkList[index].date;
+    switchInputFileds();
+}
+
+function switchInputFileds() {
+    editControls.style.display = editControls.style.display == 'none' ? 'block' : 'none';  
+    subjectInput.disabled = !subjectInput.disabled;
+    dateInput.disabled = !dateInput.disabled;
 }
 
 function updateHomework() {
@@ -47,6 +55,7 @@ function updateHomework() {
     homeworkList[index].task = task;
     clearFields();
     updateList();
+    switchInputFileds();
 }
 
 function clearFields() {
@@ -55,8 +64,8 @@ function clearFields() {
     dateInput.value = '';
 }
 
-function deleteHomework() {
-    const index = this.value;
+function deleteHomework(target) {
+    const index = target.id;
     homeworkList.splice(index);
     updateList();
 }
