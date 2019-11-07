@@ -35,8 +35,10 @@
                                 <input type="date" class="form-control" id="date">
                             </div>
                             <button class="btn btn-primary" onclick="addHomework()">Добавить</button>
-                            <button class="btn btn-success" onclick="updateHomework()" style="display: none;">Обновить</button>
-                            <button class="btn btn-danger" onclick="deleteHomework()" style="display: none;">Удалить</button>
+                            <div class="edit-controls" style="display: none;">
+                                <button class="btn btn-success" onclick="updateHomework()">Обновить</button>
+                                <button class="btn btn-danger" onclick="deleteHomework()">Удалить</button>
+                            </div>
                         </div>
                     </div>
                 </div>
