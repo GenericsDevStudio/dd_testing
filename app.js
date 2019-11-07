@@ -26,7 +26,7 @@ function updateList() {
 
 function getListItem(homework) {
     return `
-        <a href="#" id="${homeworkList.length}" class="list-group-item list-group-item-action" onclick="editHomework(this)">
+        <a href="#" id="${ homeworkList.length }" class="list-group-item list-group-item-action" onclick="editHomework(this)">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">${ homework.subject }</h5>
                 <small>${ homework.date }</small>
@@ -37,17 +37,11 @@ function getListItem(homework) {
 }
 
 function editHomework(target) {
-    const index = target.id - 1;
+    index = target.id - 1;
     subjectInput.value = homeworkList[index].subject;
     taskInput.value = homeworkList[index].task;
     dateInput.value = homeworkList[index].date;
     switchInputFileds();
-}
-
-function switchInputFileds() {
-    editControls.style.display = editControls.style.display == 'none' ? 'block' : 'none';  
-    subjectInput.disabled = !subjectInput.disabled;
-    dateInput.disabled = !dateInput.disabled;
 }
 
 function updateHomework() {
@@ -58,16 +52,23 @@ function updateHomework() {
     switchInputFileds();
 }
 
+function deleteHomework() {
+    homeworkList.splice(index);
+    updateList();
+    clearFields();
+    switchInputFileds();
+}
+
 function clearFields() {
     subjectInput.value = '';
     taskInput.value = '';
     dateInput.value = '';
 }
 
-function deleteHomework(target) {
-    const index = target.id;
-    homeworkList.splice(index);
-    updateList();
+function switchInputFileds() {
+    editControls.style.display = editControls.style.display == 'none' ? 'block' : 'none';  
+    subjectInput.disabled = !subjectInput.disabled;
+    dateInput.disabled = !dateInput.disabled;
 }
 
 class Homework {
