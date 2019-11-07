@@ -26,12 +26,12 @@ function updateList() {
 
 function getListItem(homework) {
     return `
-        <a href="#" id="${ homeworkList.length }" class="list-group-item list-group-item-action" onclick="editHomework(this)">
+        <a href="#" id="${ homeworkList.length}" class="list-group-item list-group-item-action" onclick="editHomework(this)">
             <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">${ homework.subject }</h5>
-                <small>${ homework.date }</small>
+                <h5 class="mb-1">${ homework.subject}</h5>
+                <small>${ homework.date}</small>
             </div>
-            <p class="mb-1">${ homework.task }</p>
+            <p class="mb-1">${ homework.task}</p>
         </a>
     `;
 }
@@ -53,7 +53,7 @@ function updateHomework() {
 }
 
 function deleteHomework() {
-    homeworkList.splice(index);
+    homeworkList.splice(index - 1);
     updateList();
     clearFields();
     switchInputFileds();
@@ -66,7 +66,7 @@ function clearFields() {
 }
 
 function switchInputFileds() {
-    editControls.style.display = editControls.style.display == 'none' ? 'block' : 'none';  
+    editControls.style.display = editControls.style.display == 'none' ? 'block' : 'none';
     subjectInput.disabled = !subjectInput.disabled;
     dateInput.disabled = !dateInput.disabled;
 }
