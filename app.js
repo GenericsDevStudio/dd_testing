@@ -11,7 +11,7 @@ const homeworkList = [];
 function addHomework() {
     const subject = subjectInput.value;
     const task = taskInput.value;
-    const date = dateInput.value;
+    const date = new Date(dateInput.value).getDate();
     const homework = new Homework(subject, task, date);
     homeworkList.push(homework);
     updateList();
